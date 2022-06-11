@@ -2,15 +2,19 @@ package deck.of.cards;
 
 import deck.of.cards.deck.Deck;
 
+import java.util.logging.Logger;
+
 public class Main {
+
+  private static final Logger LOGGER = Logger.getLogger(Main.class.getName());
 
   public static void main(String[] args) {
 
     Deck frenchDeck = DeckFactory.createDeck(DeckTypes.FRENCH);
 
     // printing new created deck
-    System.out.println("French deck: ");
-    System.out.println(frenchDeck.toString());
+    LOGGER.info("French deck: ");
+    LOGGER.info(frenchDeck.toString());
 
   }
 
