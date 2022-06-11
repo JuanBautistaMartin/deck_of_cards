@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Getter
 @Setter
@@ -15,4 +16,11 @@ import java.util.Set;
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 public class Deck {
     private Set<Card> cardSet;
+
+    @Override
+    public String toString() {
+        return cardSet.stream()
+          .map(Card::toString)
+          .collect(Collectors.joining("\n"));
+    }
 }
