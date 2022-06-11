@@ -1,6 +1,8 @@
 package deck.of.cards;
 
 import deck.of.cards.deck.Deck;
+import deck.of.cards.deck.DeckFactory;
+import deck.of.cards.deck.DeckTypes;
 
 import java.util.logging.Logger;
 

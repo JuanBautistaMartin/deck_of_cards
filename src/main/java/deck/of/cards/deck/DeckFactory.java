@@ -1,7 +1,6 @@
-package deck.of.cards;
+package deck.of.cards.deck;
 
 import deck.of.cards.card.Card;
-import deck.of.cards.deck.Deck;
 import deck.of.cards.freanchdeck.FrenchCard;
 import deck.of.cards.freanchdeck.FrenchFace;
 import deck.of.cards.freanchdeck.FrenchSuit;

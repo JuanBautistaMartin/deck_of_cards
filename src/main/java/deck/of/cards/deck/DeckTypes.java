@@ -1,4 +1,4 @@
-package deck.of.cards;
+package deck.of.cards.deck;
 
 public enum DeckTypes {
 
