@@ -1,14 +1,16 @@
 package deck.of.cards.card;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
+@AllArgsConstructor
 public abstract class Card {
 
     private ICardFace faceValue;
-    private CardSuit suit;
+    private ICardSuit suit;
 
     @Override
     public String toString() {
