@@ -1,8 +1,8 @@
 package deck.of.cards.freanchdeck;
 
-import deck.of.cards.card.CardSuit;
+import deck.of.cards.card.ICardSuit;
 
-public enum FrenchSuit implements CardSuit {
+public enum FrenchSuit implements ICardSuit {
     ACE,
     TWO,
     THREE,
