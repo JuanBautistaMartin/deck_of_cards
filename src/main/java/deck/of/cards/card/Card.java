@@ -7,7 +7,7 @@ import lombok.Setter;
 @Setter
 public abstract class Card {
 
-    private ICardFaceValue faceValue;
+    private ICardFace faceValue;
     private CardSuit suit;
 
     @Override
