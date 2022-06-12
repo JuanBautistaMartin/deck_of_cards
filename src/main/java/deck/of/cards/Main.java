@@ -17,6 +17,10 @@ public class Main {
     // printing new created deck
     LOGGER.info("French deck: ");
     LOGGER.info(frenchDeck.toString());
+    LOGGER.info("=========================================\n");
+
+    frenchDeck.shuffle();
+    frenchDeck.getShuffledDeck().forEach(System.out::println);
 
   }
 

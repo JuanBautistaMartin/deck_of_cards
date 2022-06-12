@@ -7,8 +7,8 @@ import deck.of.cards.freanchdeck.FrenchSuit;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Stream;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
@@ -24,7 +24,7 @@ public class DeckFactory {
   }
 
   private static Deck createFrenchDeck() {
-    Set<Card> cardList = new HashSet<>();
+    List<Card> cardList = new ArrayList<>();
     Stream.of(FrenchSuit.values())
       .forEach(suit -> Stream.of(FrenchFace.values()).forEach(
         face -> cardList.add(new FrenchCard(face, suit))

@@ -7,19 +7,39 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
 
 @Getter
 @Setter
-@AllArgsConstructor(access = AccessLevel.PUBLIC)
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 public class Deck {
-    private Set<Card> cardSet;
+
+    private List<Card> cardDeck;
+    private List<Card> shuffledDeck;
+
+    public Deck(List<Card> cardDek) {
+        this.cardDeck = cardDek;
+    }
+
+    public void shuffle() {
+        int index;
+        this.shuffledDeck = copyDeck();
+        for(int i=0; i < cardDeck.size(); i++) {
+            index = (int) (Math.random() * cardDeck.size());
+            this.shuffledDeck.set(index, cardDeck.get(i));
+        }
+    }
+
+    private List<Card> copyDeck() {
+        return new ArrayList<>(cardDeck);
+    }
 
     @Override
     public String toString() {
-        return cardSet.stream()
+        return cardDeck.stream()
           .map(Card::toString)
           .collect(Collectors.joining("\n"));
     }
