@@ -1,9 +1,11 @@
 package deck.of.cards;
 
+import deck.of.cards.card.Card;
 import deck.of.cards.deck.Deck;
 import deck.of.cards.deck.DeckFactory;
 import deck.of.cards.deck.DeckTypes;
 
+import java.util.Optional;
 import java.util.logging.Logger;
 
 public class Main {
@@ -21,6 +23,14 @@ public class Main {
 
     frenchDeck.shuffle();
     frenchDeck.getShuffledDeck().forEach(System.out::println);
+    LOGGER.info("=========================================\n");
+
+    Optional<Card> cardOptional = frenchDeck.dealOneCard();
+    if(cardOptional.isPresent()) {
+      LOGGER.info(cardOptional.get().toString());
+    } else {
+      LOGGER.info("No delaed card.");
+    }
 
   }
 

@@ -9,6 +9,7 @@ import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Getter
@@ -31,6 +32,13 @@ public class Deck {
             index = (int) (Math.random() * cardDeck.size());
             this.shuffledDeck.set(index, cardDeck.get(i));
         }
+    }
+
+    public Optional<Card> dealOneCard() {
+        int index = (int) (Math.random() * cardDeck.size());
+        Card card = this.shuffledDeck.get(index);
+        this.shuffledDeck.remove(index);
+        return Optional.ofNullable(card);
     }
 
     private List<Card> copyDeck() {
