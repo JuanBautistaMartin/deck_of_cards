@@ -28,9 +28,12 @@ public class Deck {
     public void shuffle() {
         int index;
         this.shuffledDeck = copyDeck();
+        Card card;
         for(int i=0; i < cardDeck.size(); i++) {
             index = (int) (Math.random() * cardDeck.size());
-            this.shuffledDeck.set(index, cardDeck.get(i));
+            card = cardDeck.get(index);
+            this.shuffledDeck.set(index, shuffledDeck.get(i));
+            this.shuffledDeck.set(i, card);
         }
     }
 
